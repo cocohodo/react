@@ -27,9 +27,9 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
-    "homepage" : "https://cocohodo.github.io/react-note/"
-  },
+    "deploy": "gh-pages -d build"
+    
+  },"homepage" : "https://cocohodo.github.io/react-note/",
   "eslintConfig": {
     "extends": [
       "react-app",
