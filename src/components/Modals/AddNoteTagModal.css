@@ -1,0 +1,28 @@
+.note_tag_modal_container {
+    background-color: lightcoral;
+    opacity: 1;
+    z-index: 13;
+    position: absolute;
+    left: 30%;
+    top: 30%;
+    padding: 10px;
+    width: 30%;
+}
+.note_tag_modal_list_item {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    align-items: center;
+}
+.note_tag_modal_title {
+    font-size: 20px;
+}
+.note_tag_modal_btn {
+    border: none;
+    border-radius: 5px;
+    background-color: aquamarine;
+}
+.note_tag_modal_btn:hover {
+    background-color: aqua;
+}

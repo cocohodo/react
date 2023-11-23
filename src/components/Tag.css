@@ -1,0 +1,19 @@
+.tag_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background-color:transparent;
+}
+.tag_btn {
+    width: 100%;
+    border: none;
+    text-decoration: none;
+    color: black;
+    padding: 15px 0px;
+    box-sizing: border-box;
+    margin: 0;
+}
+.tag_btn:hover {
+    background-color: yellowgreen;
+}
