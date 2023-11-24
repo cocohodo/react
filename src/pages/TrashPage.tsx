@@ -2,12 +2,12 @@ import React, { useState } from 'react'
 import './MainPage.css'
 import { useDispatch } from 'react-redux';
 import { useAppSelector } from '../app/hooks';
-import { selectNote } from '../reducers/noteListSlice';
+import { selectTrash } from '../reducers/noteListSlice';
 import Note from '../components/Note';
 import NoteModal from '../components/Modals/NoteModal';
 
-export default function MainPage() {
-  const notes = useAppSelector(selectNote);
+export default function TrashPage() {
+  const notes = useAppSelector(selectTrash);
   const dispatch = useDispatch();
   const [ noteModalOpen, setNoteModalOpen ] = useState(false);
   const isEdit = false;
@@ -27,12 +27,12 @@ export default function MainPage() {
         pinned: false
       }} isEdit={isEdit}/>}
       <div className='main_header_container'>
-        <h1 className='main_header_title'>Notes</h1>
+        <h1 className='main_header_title'>Trash</h1>
         <button className='main_header_btn' onClick={onClickNoteAddBtn}>+</button>
       </div>
       <div className='main_note_container'>
-        <Note isPinned={true} category={""} trash={false} />
-        <Note isPinned={false} category={""} trash={false} />
+        <Note isPinned={true} category={""} trash={true} />
+        <Note isPinned={false} category={""} trash={true} />
       </div>
     </div>
   )

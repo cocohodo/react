@@ -16,7 +16,7 @@ export default function Nav() {
         <Link to='/' className='nav_btn nav_notes_btn'>Notes</Link>
         <Tag/>
         <div className='nav_btn nav_editTags_btn' onClick={onClickEditTag}>Edit Tags</div>
-        <Link to='/archive' className='nav_btn nav_archive_btn'>Archive</Link>
+        {/* <Link to='/archive' className='nav_btn nav_archive_btn'>Archive</Link> */}
         <Link to='/trash' className='nav_btn nav_trash_btn'>Trash</Link>
     </nav>
   )

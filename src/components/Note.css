@@ -1,6 +1,14 @@
 .note_title {
     margin-left: 10px;
 }
+.note_header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.note_sort_btn {
+    padding: 10px 15px;
+}
 .notes_container {
     display: flex;
     flex-wrap: wrap;
@@ -30,6 +38,7 @@
 .note_container:hover {
     scale: 1.05;
     transition: 500ms;
+    cursor: pointer;
 }
 
 .note_header_container {

@@ -5,17 +5,17 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    opacity: 0.5;
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.5); /* This will give you a semi-transparent black background */
 }
 .note_modal_container {
-    background-color: white;
+    background-color: rgb(252, 233, 128);
     z-index: 12;
     position: absolute;
-    left: 30%;
+    left: 20%;
     top: 35%;
     padding: 10px;
     width: 40%;
+    /* Rest of your styles */
 }
 .note_modal_header {
     display: flex;
@@ -42,6 +42,12 @@
     border: 1px solid black;
     border-bottom: none;
     margin: 0;
+}
+.note_modal_write {
+    margin-bottom: 10px;
+}
+.ql-toolbar {
+    border-bottom: 1px solid black !important;
 }
 .note_modal_value_btns {
     border: 1px solid black;
@@ -76,11 +82,22 @@
 .note_modal_tag_container {
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
     gap: 10px;
 }
 .note_modal_tag {
     border: 1px solid black;
     border-radius: 5px;
+    background-color: white;
+    align-items: center;
+    padding: 1px;
+    display: flex;
+    gap: 1px;
+}
+.note_modal_tag_delete_btn {
+    border: none;
+    border-radius: 5px;
+    background-color: white;
 }
 
 .note_modal_footer {

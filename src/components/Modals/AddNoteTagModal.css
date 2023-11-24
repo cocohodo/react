@@ -1,5 +1,7 @@
 .note_tag_modal_container {
-    background-color: lightcoral;
+    background-color: lightgoldenrodyellow;
+    border-radius: 5px;
+    border: 2px dashed black;
     opacity: 1;
     z-index: 13;
     position: absolute;

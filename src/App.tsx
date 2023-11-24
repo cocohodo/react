@@ -4,6 +4,7 @@ import './App.css';
 import Nav from './components/Nav';
 import MainPage from './pages/MainPage';
 import TagPage from './pages/TagPage';
+import TrashPage from './pages/TrashPage';
 const Layout = () => {
   return (
     <div>
@@ -20,7 +21,7 @@ function App() {
           <Route index element={<MainPage />}/>
           <Route path="/tag/:tagName" element={<TagPage />} />
           <Route path="/archive" element={<MainPage />} />
-          <Route path="/trash" element={<MainPage />} />
+          <Route path="/trash" element={<TrashPage />} />
         </Route>
       </Routes>
     </div>

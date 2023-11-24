@@ -5,6 +5,7 @@ import { note, noteAdd, noteEdit } from '../../reducers/noteListSlice';
 import useOnClickOutside, { useAppSelector } from '../../app/hooks';
 import { useDispatch } from 'react-redux';
 import AddNoteTagModal from './AddNoteTagModal';
+import Write from '../Write';
 interface NoteModalProps {
     setNoteModalOpen: (open: boolean) => void;
     newNote: note;
@@ -56,7 +57,7 @@ export default function NoteModal({setNoteModalOpen, newNote, isEdit} : NoteModa
             priority: e.target.value
         }));
     };
-    const onChangeHandler = (e : React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLTextAreaElement>) => {
+    const onChangeHandler = (e : React.ChangeEvent<HTMLInputElement>) => {
         if(e.target.id==='title') setNowNote(prevNote => ({
             ...prevNote, title: e.target.value
         }));
@@ -93,8 +94,8 @@ export default function NoteModal({setNoteModalOpen, newNote, isEdit} : NoteModa
     const noteRemoveTag = (tagIdToRemove:tag) => {
         setNowNote(prevNote => {
             // `id`가 `tagIdToRemove`와 일치하지 않는 태그만 필터링합니다.
+            console.log(tagIdToRemove);
             const newTags = prevNote.tag.filter(tag => tag.id !== tagIdToRemove.id);
-    
             return {
                 ...prevNote,
                 tag: newTags
@@ -112,20 +113,18 @@ export default function NoteModal({setNoteModalOpen, newNote, isEdit} : NoteModa
             </div>
             <form className='note_modal_input_form'>
                 <input id='title' type='text' value={nowNote.title} className='note_modal_title_input' placeholder="제목을 입력하세요." onChange={onChangeHandler}/>
-                <div className='note_modal_value_btns'>
-                    게시판 버튼들
-                </div>
-                <textarea id='value' value={nowNote.value} className={`note_modal_value note_modal_value_${nowNote.color}`} placeholder="내용을 입력하세요." onChange={onChangeHandler}/>
+                <Write nowNote={nowNote} setNowNote={setNowNote} />
+                {/* <textarea id='value' value={nowNote.value} className={`note_modal_value note_modal_value_${nowNote.color}`} placeholder="내용을 입력하세요." onChange={onChangeHandler}/> */}
             </form>
             <div className='note_modal_tag_container'>
-                {nowNote.tag.map(tag => <span className='note_modal_tag'>{tag.value}</span>)}
+                {nowNote.tag.map(tag => <span className='note_modal_tag'>{tag.value}<button className='note_modal_btn note_modal_tag_delete_btn' onClick={() =>noteRemoveTag(tag)}>x</button></span>)}
             </div>
             <div className='note_modal_footer'>
                 <button className='note_modal_footer_add_tag_btn' onClick={() => setAddTagModalOpen(true)}>Add tag</button>
                 <div className='note_modal_background_color_container'>
                     <label className='note_modal_background_color_label'>배경색 : </label>
                     <form>
-                        <select name='background_color' onChange={onColorChange}>
+                        <select name='background_color' onChange={onColorChange} value={nowNote.color}>
                             <option value="white">하얀색</option>
                             <option value="red">빨간색</option>
                             <option value="blue">파란색</option>
@@ -137,7 +136,7 @@ export default function NoteModal({setNoteModalOpen, newNote, isEdit} : NoteModa
                 <div className='note_modal_priority_container'>
                     <label className='note_modal_priority_label'>우선순위 : </label>
                     <form>
-                        <select name='priority' onChange={onPriorityChange}>
+                        <select name='priority' onChange={onPriorityChange} value={nowNote.priority}>
                             <option value="low">Low</option>
                             <option value="high">High</option>
                         </select>

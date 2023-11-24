@@ -11,7 +11,7 @@ const container = document.getElementById('root')!;
 const root = createRoot(container);
 
 root.render(
-  <BrowserRouter>
+  <BrowserRouter basename="/react-note">
     <Provider store={store}>
       <App />
     </Provider>

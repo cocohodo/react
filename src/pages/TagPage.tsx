@@ -38,7 +38,7 @@ export default function TagPage() {
           <button className='tagpage_header_btn' onClick={onClickNoteAddBtn}>+</button>
         </div>
         <div className='tagpage_note_container'>
-          <Note isPinned={false} category={category} />
+          <Note isPinned={false} category={category} trash={false} />
         </div>
       </div>
     )

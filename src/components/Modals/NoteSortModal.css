@@ -1,0 +1,54 @@
+.note_sort_modal_background {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.note_sort_modal_container {
+    background-color: white;
+    opacity: 1;
+    z-index: 2;
+    position: absolute;
+    left: 30%;
+    top: 35%;
+    padding: 20px;
+    width: 10%;
+}
+.note_sort_modal_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.note_sort_modal_title {
+    color: black;
+    font-weight: 500;
+}
+.note_sort_modal_clear_btn {
+    color: red;
+}
+.note_sort_modal_close_btn {
+    font-size: 20px;
+}
+.note_sort_modal_btn:hover {
+    background-color: orange;
+}
+.note_sort_modal_btn {
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: white;
+}
+.note_sort_modal_priority {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    gap: 10px;
+}
+.note_sort_modal_date {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
